@@ -9,7 +9,7 @@ export function BattleMap() {
   const cells = useRef<(HTMLButtonElement | null)[]>([]);
   const territories = game.data?.map;
   return <section id="comb" className="battle-section" aria-labelledby="map-title">
-    <div className="map-top"><div><p className="eyebrow">The battlefield</p><h2 id="map-title">61 territories. One Comb.</h2></div><div className="map-counter"><span className="tiny-label">Territories held</span><strong>{territories ? territories.filter(t => t.controller < 4).length : '—'}<span> / 61</span></strong></div></div>
+    <div className="map-top"><div><h2 id="map-title">The Comb</h2></div><div className="map-counter"><span className="tiny-label">Territories held</span><strong>{territories ? territories.filter(t => t.controller < 4).length : '—'}<span> / 61</span></strong></div></div>
     <div className="battle-layout">
       <div className="map-area">
         <div className="map-label"><span><span className="crosshair">⌖</span> Tactical view</span><span>{territories ? 'Last settled control' : 'Awaiting live state'}</span></div>
@@ -61,7 +61,7 @@ function TerritoryPanel({ selected }: { selected: number }) {
   const disabled = !joined || !parsed || insufficient || (mode === 'move' && selected === destination);
   const invalid = amount !== '' && !parsed;
   return <aside className="territory-panel" aria-label="Selected territory">
-    <div className="territory-heading"><span className="eyebrow">Sector {String(selected).padStart(2, '0')}</span><span className="points-badge">+{points(selected)} pts / epoch</span></div>
+    <div className="territory-heading"><span className="tiny-label">Sector {String(selected).padStart(2, '0')}</span><span className="points-badge">+{points(selected)} pts / epoch</span></div>
     <h3>{territoryName(selected)}</h3><p className="territory-control"><span className="status-dot" style={{ background: territory ? colonies[territory.controller]?.color : undefined }} />{territory ? `${colonyName(territory.controller)} control` : 'Control unavailable'}</p>
     <table className="stake-table"><caption className="sr-only">Stake by colony in NECTAR</caption><thead><tr><th>Colony</th><th>Active</th><th>Pending</th></tr></thead><tbody>{colonies.map((c, i) => <tr key={c.name}><th scope="row"><i style={{ background: c.color }} />{c.name}</th><td title={territory ? `${formatUnits(territory.active[i], 18)} NECTAR` : undefined}>{units(territory?.active[i])}</td><td>{territory ? '+' + units(territory.pending[i]) : '—'}</td></tr>)}</tbody></table>
     <p className="small muted unit-note">All troops in NECTAR</p>

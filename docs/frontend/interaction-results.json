@@ -2,9 +2,9 @@
   "profile": "Chromium 141 / Playwright 1.56.1",
   "exportBase": "/preview/",
   "stats": {
-    "startTime": "2026-10-12T16:25:07.675Z",
-    "duration": 33018.611,
-    "expected": 12,
+    "startTime": "2026-10-12T17:21:38.419Z",
+    "duration": 83713.14600000001,
+    "expected": 17,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
@@ -16,7 +16,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 748,
+          "durationMs": 2128,
           "errors": []
         }
       ]
@@ -27,7 +27,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 698,
+          "durationMs": 2280,
           "errors": []
         }
       ]
@@ -38,7 +38,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 2331,
+          "durationMs": 4092,
           "errors": []
         }
       ]
@@ -49,7 +49,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 5886,
+          "durationMs": 13419,
           "errors": []
         }
       ]
@@ -60,7 +60,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 1684,
+          "durationMs": 3378,
           "errors": []
         }
       ]
@@ -71,7 +71,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 3866,
+          "durationMs": 7926,
           "errors": []
         }
       ]
@@ -82,7 +82,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 2202,
+          "durationMs": 3097,
           "errors": []
         }
       ]
@@ -93,7 +93,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 520,
+          "durationMs": 1170,
           "errors": []
         }
       ]
@@ -104,7 +104,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 5016,
+          "durationMs": 11147,
           "errors": []
         }
       ]
@@ -115,7 +115,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 4609,
+          "durationMs": 6323,
           "errors": []
         }
       ]
@@ -126,7 +126,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 1231,
+          "durationMs": 2839,
           "errors": []
         }
       ]
@@ -137,7 +137,62 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 2678,
+          "durationMs": 3400,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "phone entry exposes all 61 territories and the selector before scrolling",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 3732,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "large valid troop totals stay complete inside the narrow army panel",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2759,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "swap verification retries recover without a reload and fail closed while checking",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 5919,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "section hierarchy uses task headings and the shared type scale",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2434,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "static share metadata points to the inventoried 1200 by 630 card",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2198,
           "errors": []
         }
       ]

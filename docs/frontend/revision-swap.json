@@ -1,0 +1,14 @@
+{
+  "checkedAt": "2026-10-12T17:22:56.881Z",
+  "value": {
+    "initialCalls": 2,
+    "finalCalls": 7,
+    "failuresChecked": [
+      "RPC unavailable twice",
+      "missing code",
+      "metadata mismatch"
+    ],
+    "quoteRecovered": true,
+    "signedTransactions": 0
+  }
+}

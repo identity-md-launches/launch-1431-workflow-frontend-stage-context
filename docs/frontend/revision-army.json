@@ -1,0 +1,149 @@
+{
+  "checkedAt": "2026-10-12T17:22:50.891Z",
+  "value": [
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "panel": {
+        "x": 16,
+        "y": 2988.5,
+        "width": 288,
+        "height": 370.65625,
+        "top": 2988.5,
+        "right": 304,
+        "bottom": 3359.15625,
+        "left": 16
+      },
+      "totals": [
+        {
+          "text": "100,000,000.5 NECTAR",
+          "box": {
+            "x": 40,
+            "y": 3039.6875,
+            "width": 240,
+            "height": 65.796875,
+            "top": 3039.6875,
+            "right": 280,
+            "bottom": 3105.484375,
+            "left": 40
+          },
+          "fontSize": "32px",
+          "scrollWidth": 240,
+          "clientWidth": 240
+        },
+        {
+          "text": "100,000,000.5 NECTAR",
+          "box": {
+            "x": 40,
+            "y": 3152.671875,
+            "width": 240,
+            "height": 65.796875,
+            "top": 3152.671875,
+            "right": 280,
+            "bottom": 3218.46875,
+            "left": 40
+          },
+          "fontSize": "32px",
+          "scrollWidth": 240,
+          "clientWidth": 240
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "panel": {
+        "x": 16,
+        "y": 1786.15625,
+        "width": 358,
+        "height": 370.65625,
+        "top": 1786.15625,
+        "right": 374,
+        "bottom": 2156.8125,
+        "left": 16
+      },
+      "totals": [
+        {
+          "text": "100,000,000.5 NECTAR",
+          "box": {
+            "x": 40,
+            "y": 1837.34375,
+            "width": 310,
+            "height": 65.796875,
+            "top": 1837.34375,
+            "right": 350,
+            "bottom": 1903.140625,
+            "left": 40
+          },
+          "fontSize": "32px",
+          "scrollWidth": 310,
+          "clientWidth": 310
+        },
+        {
+          "text": "100,000,000.5 NECTAR",
+          "box": {
+            "x": 40,
+            "y": 1950.328125,
+            "width": 310,
+            "height": 65.796875,
+            "top": 1950.328125,
+            "right": 350,
+            "bottom": 2016.125,
+            "left": 40
+          },
+          "fontSize": "32px",
+          "scrollWidth": 310,
+          "clientWidth": 310
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "panel": {
+        "x": 80,
+        "y": 1217.046875,
+        "width": 782.03125,
+        "height": 246.671875,
+        "top": 1217.046875,
+        "right": 862.03125,
+        "bottom": 1463.71875,
+        "left": 80
+      },
+      "totals": [
+        {
+          "text": "100,000,000.5 NECTAR",
+          "box": {
+            "x": 109,
+            "y": 1273.234375,
+            "width": 350.015625,
+            "height": 44.796875,
+            "top": 1273.234375,
+            "right": 459.015625,
+            "bottom": 1318.03125,
+            "left": 109
+          },
+          "fontSize": "32px",
+          "scrollWidth": 350,
+          "clientWidth": 350
+        },
+        {
+          "text": "100,000,000.5 NECTAR",
+          "box": {
+            "x": 483.015625,
+            "y": 1273.234375,
+            "width": 350.015625,
+            "height": 44.796875,
+            "top": 1273.234375,
+            "right": 833.03125,
+            "bottom": 1318.03125,
+            "left": 483.015625
+          },
+          "fontSize": "32px",
+          "scrollWidth": 350,
+          "clientWidth": 350
+        }
+      ]
+    }
+  ]
+}

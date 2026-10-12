@@ -1,0 +1,103 @@
+{
+  "checkedAt": "2026-10-12T17:22:47.179Z",
+  "value": [
+    {
+      "width": 390,
+      "height": 844,
+      "scrollY": 0,
+      "scrollWidth": 390,
+      "boxes": {
+        ".hero": {
+          "x": 16,
+          "y": 98,
+          "width": 358,
+          "height": 320.578125,
+          "top": 98,
+          "right": 374,
+          "bottom": 418.578125,
+          "left": 16
+        },
+        "#comb": {
+          "x": 16,
+          "y": 434.578125,
+          "width": 358,
+          "height": 1383.359375,
+          "top": 434.578125,
+          "right": 374,
+          "bottom": 1817.9375,
+          "left": 16
+        },
+        ".hex-map": {
+          "x": 17,
+          "y": 481.953125,
+          "width": 356,
+          "height": 306.546875,
+          "top": 481.953125,
+          "right": 373,
+          "bottom": 788.5,
+          "left": 17
+        },
+        "#territory-select": {
+          "x": 29,
+          "y": 788.5,
+          "width": 185,
+          "height": 46,
+          "top": 788.5,
+          "right": 214,
+          "bottom": 834.5,
+          "left": 29
+        }
+      },
+      "visibleCells": 61
+    },
+    {
+      "width": 320,
+      "height": 844,
+      "scrollY": 0,
+      "scrollWidth": 320,
+      "boxes": {
+        ".hero": {
+          "x": 16,
+          "y": 98,
+          "width": 288,
+          "height": 307.515625,
+          "top": 98,
+          "right": 304,
+          "bottom": 405.515625,
+          "left": 16
+        },
+        "#comb": {
+          "x": 16,
+          "y": 421.515625,
+          "width": 288,
+          "height": 1374.546875,
+          "top": 421.515625,
+          "right": 304,
+          "bottom": 1796.0625,
+          "left": 16
+        },
+        ".hex-map": {
+          "x": 17,
+          "y": 468.890625,
+          "width": 286,
+          "height": 246.265625,
+          "top": 468.890625,
+          "right": 303,
+          "bottom": 715.15625,
+          "left": 17
+        },
+        "#territory-select": {
+          "x": 29,
+          "y": 720.75,
+          "width": 167.671875,
+          "height": 46,
+          "top": 720.75,
+          "right": 196.671875,
+          "bottom": 766.75,
+          "left": 29
+        }
+      },
+      "visibleCells": 61
+    }
+  ]
+}

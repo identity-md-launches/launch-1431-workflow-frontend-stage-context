@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-12T16:09:51.744Z",
+  "checkedAt": "2026-10-12T17:16:51.794Z",
   "kind": "read-only RPC verification",
   "attempts": [
     {
@@ -9,7 +9,7 @@
   ],
   "result": {
     "chainId": 1,
-    "block": "26177495",
+    "block": "26177829",
     "contracts": [
       {
         "name": "LaunchToken",
@@ -38,8 +38,8 @@
       "season": "1",
       "epoch": "1",
       "epochInSeason": "1",
-      "secondsLeft": "80772",
-      "seasonSecondsLeft": "2586372",
+      "secondsLeft": "76752",
+      "seasonSecondsLeft": "2582352",
       "lastSettled": "0",
       "pastWinners": []
     },

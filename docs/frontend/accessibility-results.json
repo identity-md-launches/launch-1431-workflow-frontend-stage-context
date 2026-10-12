@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-12T16:25:32.013Z",
+  "checkedAt": "2026-10-12T17:22:31.697Z",
   "fixture": "mocked chain, connected wallet",
   "violations": [],
   "incomplete": [
@@ -84,7 +84,7 @@
         "ratio": 9.68
       },
       {
-        "selector": ".season-panel .eyebrow",
+        "selector": ".season-panel .tiny-label",
         "foreground": "rgb(182, 188, 174)",
         "background": "rgb(23, 27, 21)",
         "ratio": 8.96
@@ -104,8 +104,8 @@
       {
         "selector": ".hex[aria-label=\"The Core, 5 points, Crimson, contested\"] .hex-id",
         "foreground": "rgb(245, 165, 36)",
-        "background": "color(srgb 0.195216 0.128824 0.110902)",
-        "ratio": 7.51
+        "background": "color(srgb 0.332549 0.158824 0.148235)",
+        "ratio": 5.94
       },
       {
         "selector": ".hex[aria-label=\"Territory 01, 3 points, Obsidian\"] .hex-id",

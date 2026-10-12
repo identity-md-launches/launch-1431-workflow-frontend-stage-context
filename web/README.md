@@ -4,7 +4,7 @@ A static React + TypeScript war room for the deployed HiveWars game. The product
 
 ## Install, build, preview
 
-Use Node 22.12+ (worker: Node 24.9.0) and npm. Start from a full Git checkout that includes the handoff's deployed source commit.
+Use Node 22.12+ (revision worker: Node 24.21.0) and npm. Start from a full Git checkout that includes the handoff's deployed source commit.
 
 ```sh
 cd web
@@ -13,7 +13,7 @@ npm run build
 npm run preview
 ```
 
-Open the URL printed by Vite. To test a gateway-style subpath, run `node scripts/serve.mjs` and open `http://127.0.0.1:4173/preview/`. Stop with Ctrl+C. `npm run dev` provides hot reload after the first build; its development middleware serves the **same** manifest and ABI files from `dist/`.
+Open the URL printed by Vite. To test a gateway-style subpath, run `node scripts/serve.mjs` and open `http://127.0.0.1:4173/preview/`. Stop with Ctrl+C. If port 4173 is in use, set `HIVE_PREVIEW_PORT` to a free port for both the server and browser tests. `npm run dev` provides hot reload after the first build; its development middleware serves the **same** manifest and ABI files from `dist/`.
 
 Build runs strict TypeScript checking, gathers dependency licenses, exports with Vite `base: './'`, and finally regenerates `dist/imd-deployment.json`. All UI assets and fonts are local. Navigation uses document anchors, so static hosting needs no route rewrites. Host `dist/` as a directory with a trailing-slash entrypoint. Do not upload `web/node_modules/`.
 
@@ -36,6 +36,7 @@ Protocol **interfaces**, without addresses, are centralized in `src/protocol.ts`
 - Every write is simulated, then signed by the visitor, then held pending through one successful receipt and state refresh. The originating action has its own status label; a shared signing lock prevents competing requests. Rejection/revert feedback remains inline. Uncertain confirmations retain the lock and offer a receipt recheck plus explorer link. A full page reload does not persist pending transaction tracking; check the wallet/explorer before resubmitting.
 - Deploy requires an explicit exact-amount NECTAR approval to HiveWars. Move/retreat consume the selected territory's stake. Retreats unlock individually after 24 hours; one claim pays at most 64 mature entries. Joining locks the season choice. The deployed implementation has immutable NECTAR/game bindings and no owner/setter, so there is no fictitious binding panel.
 - Buy spends **IMD**, not ETH. Sell spends NECTAR. Non-native inputs explicitly approve the token to Permit2, then Permit2 to the configured router; each step reads current allowances and waits for confirmation. Router approval lasts 30 minutes and covers only the entered amount. No unlimited approval is requested.
+- A failed swap contract/code or token-metadata check offers **Retry swap check** beside the error. It reruns the same checks, clears the old message, and keeps quotes and transaction actions disabled until verification succeeds.
 - Quotes are `simulateContract` reads, expire after 60 seconds, and invalidate when amount, direction, account or slippage changes. Slippage is 0.1%–5%. The router transaction uses commands `0x10`, actions `0x060c0f`, exact pool key, minimum output, and a five-minute deadline. `extendedSwapParams` is supported when the network declares it. ERC-20 pairs send zero ETH value. Native input support sends only its input amount and skips approvals. Gas is separate; USD prices are explicitly unavailable.
 
 ## Observability and bounded history
@@ -45,6 +46,14 @@ The app displays live season/epoch countdowns, colony members/active stake/score
 War Log reads 2,000-block pages from the configured public RPC, displays up to 150 events per page, and allows older pages and further disclosure. Refresh returns to the newest page. Keeper ranking is explicitly **discovered keepers**, using transaction senders from up to 20 loaded settlement transactions and their `keeperSettlements` counts. It is not a complete historical index, and forwarded/smart-account calls can have a different game caller than the transaction sender. Your own keeper count is read directly.
 
 Badge history paginates six finalized seasons at a time; a season field checks any finalized season directly. Minted images are decoded from the contract's base64 JSON and rendered as isolated `img` data URLs, never injected HTML. The badge is soulbound; transfer/approval methods that always revert have no transaction control.
+
+## Share image
+
+`public/share-card.png` is the committed 1200×630 raster preview, exported as `dist/share-card.png` and included in the deployment manifest. `index.html` declares the image, dimensions and descriptive alt text in static Open Graph metadata. The artwork reuses the actual 61-cell geometry, colony colors and local display font. It is an illustration, not live territory ownership.
+
+To regenerate the card after an intentional design change, install the Playwright Chromium browser as below, run `PLAYWRIGHT_BROWSERS_PATH=/tmp/hive-wars-browsers node --import tsx scripts/share-card.ts`, then `npm run build` to export it and rebuild the asset inventory. Ordinary builds reuse the committed card and need no browser.
+
+No published origin was supplied. The export therefore uses `./share-card.png`, which resolves beside the entrypoint at a gateway subpath. Some social crawlers require an absolute HTTPS image URL: when the publisher knows the final site address, update the static `og:image` in `web/index.html` to that origin's exported card and rebuild the manifest before publishing. This is the documented prepublication exception in the pinned frontend UX guide; no domain or CID is guessed.
 
 ## Validation
 
@@ -60,4 +69,6 @@ node --import tsx scripts/live-check.mjs
 
 Browser tests serve the actual production export under `/preview/`, start and stop their own preview, and mock wallet/RPC behavior for writes. One test reads live public state with **no wallet**. Tests never broadcast transactions. Browser traces/results go under `/tmp`; durable screenshots and review results are under `docs/frontend/`. The live-check script only reads code/state and simulates quotes, then writes `docs/frontend/live-rpc-check.json`.
 
-See [validation evidence](../docs/frontend/VALIDATION.md), [design documentation](../docs/DESIGN.md), and [guide attribution](../docs/frontend/ATTRIBUTION.md). Root `DESIGN.md` is intentionally not created: the assignment's overriding write budget permits documentation only under `docs/` or `web/`. No contracts or root build settings are modified. Publishing, site naming and IPFS pinning remain downstream operations.
+The revision adds regression coverage for first-screen territory selection at 390×844 and 320×844, full large troop totals, recoverable swap checks, task headings/type scale, and the static share image. The reviewer response is in `.imd-responses.json` at repository root (explicit revision scope exception).
+
+See [revision evidence](../docs/frontend/REVISION.md), [validation evidence](../docs/frontend/VALIDATION.md), [design documentation](../docs/DESIGN.md), and [guide attribution](../docs/frontend/ATTRIBUTION.md). Root `DESIGN.md` is intentionally not created: the assignment's overriding write budget permits documentation only under `docs/` or `web/`. No contracts or root build settings are modified. Publishing, site naming and IPFS pinning remain downstream operations.

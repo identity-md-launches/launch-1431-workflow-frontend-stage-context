@@ -32,13 +32,13 @@ Measured browser-computed contrast examples: primary text/page 16.59:1, secondar
 
 ## Typography
 
-Sources: `web/src/style.css:2` (font faces), `web/src/style.css:12` (families), `web/src/style.css:170` (annotation floor).
+Sources: `web/src/style.css:2` (font faces), `web/src/style.css:12` (families), `web/src/style.css:13` (type scale).
 
-- Display: locally bundled Barlow Condensed, weights 600 and 700; fallback Arial Narrow, sans-serif. Hero is uppercase, weight 700, line-height .96, with amber on its second phrase. Its desktop size is `clamp(3.4rem, 6.5vw, 5.9rem)` and mobile size is `clamp(3.8rem, 15vw, 5.2rem)`.
+- Display: locally bundled Barlow Condensed, weights 600 and 700; fallback Arial Narrow, sans-serif. Hero is uppercase, weight 700, line-height .96, with amber on its second phrase. Its desktop size is `clamp(3.4rem, 6.5vw, 5.9rem)` and mobile size is `clamp(2.5rem, 12vw, 3.5rem)`.
 - Body: Arial/Helvetica/sans-serif at 16px and 1.55 line-height. Most dense supporting UI text is 14px. Prose is generally limited to 50–55 characters per line in panels.
-- Labels and numbers: local IBM Plex Mono 400, with monospace fallback. Time, points, balances and IDs use tabular figures. Small uppercase labels use controlled letter spacing. Most annotations have a 12px minimum; compact map annotations, the mobile shortened wallet address and the logo subtitle remain smaller. Complete territory names and controls are available outside the map through a native selector and detail panel.
-- Section headings use `clamp(2rem, 3.4vw, 2.75rem)`; general panel headings use 1.75rem. The selected territory title uses 2rem. Headings balance wrapping; paragraphs use `text-wrap: pretty`; full addresses can wrap anywhere.
-- Inputs remain at least 16px to avoid mobile Safari's small-input zoom. Only WOFF2 font files ship. Font load checks passed in Chromium.
+- Labels and numbers: local IBM Plex Mono 400, with monospace fallback. Time, points, balances and IDs use tabular figures. Data labels use sentence case and normal letter spacing. Content and controls use the shared 12/14/16/24/32px scale plus the responsive hero. Only redundant map artwork annotations use 8px or 10px; the territory selector, accessible cell names and detail panel carry the same information at reading size. Complete territory names and controls are available outside the map through a native selector and detail panel.
+- Section headings use `--text-section` (2rem / 32px); all panel headings, including the selected territory, use `--text-panel` (1.5rem / 24px). `--text-xs`, `--text-sm` and `--text-body` are .75rem / 12px, .875rem / 14px and 1rem / 16px. Important totals use 32px; compact countdowns use 24px. Headings balance wrapping; paragraphs use `text-wrap: pretty`; full addresses can wrap anywhere.
+- Inputs use 16px to avoid mobile Safari's small-input zoom. Only WOFF2 font files ship. Font load checks passed in Chromium.
 
 ## Layout
 
@@ -46,7 +46,7 @@ Source: `web/src/style.css`; composition: `web/src/App.tsx`, `Map.tsx`, `Section
 
 The page container is at most 1280px wide with 40px desktop gutters. Spacing mostly follows an 8px rhythm: 8/16px within groups, 24/28px panel padding, 24px between larger panels and 76px between sections. Mobile uses 16px gutters and 48px section spacing. Form controls stay inside gutters.
 
-At 1120px, gutters become 24px and the map's detail column narrows to 300px. At 880px, navigation gets a second row, the map detail panel moves below the map into two columns, colonies use two columns and personal army panels stack. At 640px, hero, supply, logs and hall become single-column; the territory panel returns to normal document flow; the field manual becomes a numbered vertical list. The keeper action precedes the log visually on mobile. Colony cards remain a compact two-column comparison.
+At 1120px, gutters become 24px and the map's detail column narrows to 300px. At 880px, navigation gets a second row, the map detail panel moves below the map into two columns, colonies use two columns and personal army panels stack. At 640px, hero, supply, logs and hall become single-column; the territory panel returns to normal document flow; the field manual becomes a numbered vertical list. The mobile entry keeps the story and amber headline, wallet action, live season/epoch countdown and four score bars. It hides the secondary hero description/actions and mission strip, uses a two-column compact score grid, and places the Comb immediately after the summary with 16px separation. Its short map heading and inline territory count keep all cells plus the native selector in the initial 390×844 and 320×844 views. Other sections keep 48px separation. The army summary stacks its complete totals in one `minmax(0, 1fr)` column with a 20px gap at this breakpoint. The keeper action precedes the log visually on mobile. Colony cards remain a compact two-column comparison.
 
 The map is an axial radius-4 board in a 720:620 area. Cell positions mirror the deployed implementation's ring order. Native hex buttons support pointer selection, a single Tab entry point, arrow-key movement and Home for the Core. The native territory selector provides a larger equivalent control, including on narrow screens. Map geometry is physical, so its coordinates do not mirror for writing direction.
 
@@ -68,16 +68,18 @@ Shared controls/cards use `--radius: 6px`; nested segments use 3px with a 4px in
 | `TxFeedback` | `web/src/ui.tsx` | Persistent inline live region, translated errors, receipt link and recheck action |
 | `WalletGate` | `web/src/ui.tsx` | Connect affordance, wrong-network explanation or read-verification status |
 | `AddressLink` | `web/src/ui.tsx` | Checksummed address, explorer link, full-address title, copy button and feedback |
-| `SectionTitle` | `web/src/ui.tsx` | Eyebrow + heading with optional trailing status/control; wraps on small screens |
+| `SectionTitle` | `web/src/ui.tsx` | Section heading with optional trailing status/control; wraps on small screens; no decorative kicker |
 | `Icon` | `web/src/ui.tsx` | Small local SVG set, `currentColor`, 1.6px stroke; decorative SVGs hidden from assistive technology |
 | Hex board/detail panel | `web/src/Map.tsx` | Controller identity, pending contests, accessible selection, active/pending table and order form |
 | Segmented controls | `style.css`, `Map.tsx`, `Swap.tsx` | Native buttons with `aria-pressed`, visible selected surface and focus styling |
 | Fields and notices | `style.css` | Persistent labels, 46px minimum controls, inline validation and recoverable status text |
 | Token amount formatting | `web/src/domain.ts` | Integer parsing without rounding, token-specific units and full precision where needed |
 
-Empty states describe what belongs in the section and how to begin. Failed RPC reads preserve labeled last-known state and disable writes. Disabled transaction buttons use reduced opacity and surrounding prerequisite text; they never imply a completed approval. Skeleton/fake game values are not generated.
+Empty states describe what belongs in the section and how to begin. Failed RPC reads preserve labeled last-known state and disable writes. Failed swap verification has an inline retry that repeats code and metadata checks; quoting and signing stay disabled during the attempt and after any failure. Disabled transaction buttons use reduced opacity and surrounding prerequisite text; they never imply a completed approval. Skeleton/fake game values are not generated.
 
 Motion is opt-in under `prefers-reduced-motion: no-preference`: button changes last 150ms, press scale is .96, contested pulses last 2 seconds, and pending spinners rotate. There is an explicit pause button for map pulses; reduced motion disables animation and smooth scrolling. No page-entry animation is used.
+
+The static 1200×630 share card at `web/public/share-card.png` reuses the Comb coordinates, local display font and colony colors via `web/scripts/share-card.ts`. Its territory colors are an illustration. Static HTML declares relative Open Graph image metadata until the final publication origin is known.
 
 ## Do's and Don'ts
 

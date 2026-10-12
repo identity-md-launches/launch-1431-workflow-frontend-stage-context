@@ -39,6 +39,6 @@ export function WalletGate() {
   if (game.error || !game.verified) return <p className="small muted">Actions unlock after deployment and live state checks succeed.</p>;
   return null;
 }
-export function SectionTitle({ eyebrow, title, children }: { eyebrow: string; title: string; children?: ReactNode }) {
-  return <div className="section-heading"><div><p className="eyebrow">{eyebrow}</p><h2>{title}</h2></div>{children}</div>;
+export function SectionTitle({ title, children }: { title: string; children?: ReactNode }) {
+  return <div className="section-heading"><h2>{title}</h2>{children}</div>;
 }

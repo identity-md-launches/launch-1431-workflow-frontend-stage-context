@@ -1,5 +1,7 @@
 # Frontend validation and Better Interface review
 
+**Revision:** The report below records the accepted initial round. See [REVISION.md](REVISION.md) for the current revision, findings, final export sizes and checks. Shared screenshots and machine-readable reports have been refreshed against the revised export.
+
 Worker date: 2026-10-12. Scope: frontend source under `web/`, static export under `dist/`, and documentation/evidence under `docs/`. Deployed Solidity, libraries, Foundry settings, root build files and existing contract tests are unchanged. This is worker evidence, not an independent certification or a publication result.
 
 ## Result

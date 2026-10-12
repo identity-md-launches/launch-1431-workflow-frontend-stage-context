@@ -7,7 +7,7 @@ import { Action, AddressLink, Icon, SectionTitle, TxFeedback, WalletGate } from 
 
 export function Supply() {
   const { runtime } = useApp();
-  return <section id="supply"><SectionTitle eyebrow="Keep your colony supplied" title="Supply lines"><span className="tag">Uniswap v4</span></SectionTitle><div className="supply-grid"><div className="supply-copy"><Icon name="hex" size={48} /><h3>NECTAR fuels the front.</h3><p>Trade through the launch pool, then deploy your NECTAR where it makes a difference.</p><p className="small muted">Swaps exchange tokens. Game deposits remain yours, with a 24-hour retreat cooldown. You need ETH for network fees.</p><p className="small muted">USD values are unavailable: no price feed was supplied for this launch.</p><dl className="pool-details"><div><dt>Pool fee</dt><dd>{runtime.manifest.poolKey ? runtime.manifest.poolKey.fee / 10000 : '—'}%</dd></div><div><dt>Settlement</dt><dd>{runtime.manifest.network.name}</dd></div><div><dt>Route</dt><dd>Attested launch pool</dd></div></dl><details><summary>Pool and router details</summary><p className="small">The exact pool key is loaded from the deployment manifest. Quotes and transactions use the network’s configured Uniswap addresses.</p>{runtime.manifest.poolKey && <p className="small">Pool hook: <AddressLink address={runtime.manifest.poolKey.hooks} /></p>}<p className="small">Router: <AddressLink address={runtime.manifest.network.uniswapV4.universalRouter} /></p><p className="small">Permit2: <AddressLink address={runtime.manifest.network.uniswapV4.permit2} /></p></details><Transfer /></div><Swap /></div></section>;
+  return <section id="supply"><SectionTitle title="Supply lines"><span className="tag">Uniswap v4</span></SectionTitle><div className="supply-grid"><div className="supply-copy"><Icon name="hex" size={48} /><h3>NECTAR fuels the front.</h3><p>Trade through the launch pool, then deploy your NECTAR where it makes a difference.</p><p className="small muted">Swaps exchange tokens. Game deposits remain yours, with a 24-hour retreat cooldown. You need ETH for network fees.</p><p className="small muted">USD values are unavailable: no price feed was supplied for this launch.</p><dl className="pool-details"><div><dt>Pool fee</dt><dd>{runtime.manifest.poolKey ? runtime.manifest.poolKey.fee / 10000 : '—'}%</dd></div><div><dt>Settlement</dt><dd>{runtime.manifest.network.name}</dd></div><div><dt>Route</dt><dd>Attested launch pool</dd></div></dl><details><summary>Pool and router details</summary><p className="small">The exact pool key is loaded from the deployment manifest. Quotes and transactions use the network’s configured Uniswap addresses.</p>{runtime.manifest.poolKey && <p className="small">Pool hook: <AddressLink address={runtime.manifest.poolKey.hooks} /></p>}<p className="small">Router: <AddressLink address={runtime.manifest.network.uniswapV4.universalRouter} /></p><p className="small">Permit2: <AddressLink address={runtime.manifest.network.uniswapV4.permit2} /></p></details><Transfer /></div><Swap /></div></section>;
 }
 type Allowances = { account: string; token: string; balance: bigint; erc20: bigint; permit: bigint; expiration: number };
 type Quote = { output: bigint; minimum: bigint; at: number; key: string };
@@ -16,6 +16,7 @@ export function Swap() {
   const [buy, setBuy] = useState(true), [amount, setAmount] = useState(''), [slippage, setSlippage] = useState('0.5');
   const [quote, setQuote] = useState<Quote>(), [quoting, setQuoting] = useState(false), [error, setError] = useState('');
   const [allowances, setAllowances] = useState<Allowances>(), [checked, setChecked] = useState(false), [checkingError, setCheckingError] = useState('');
+  const [checking, setChecking] = useState(false), [checkAttempt, setCheckAttempt] = useState(0);
   const requestId = useRef(0);
   let currencies: ReturnType<typeof swapCurrencies> | undefined, configError = '';
   try { currencies = swapCurrencies(runtime, buy); } catch (e) { configError = errorMessage(e); }
@@ -44,8 +45,9 @@ export function Swap() {
   }, [wallet.account, input?.address, game.verified, runtime]);
   useEffect(() => {
     let active = true;
-    setChecked(false); setCheckingError('');
+    setChecked(false); setCheckingError(''); setChecking(false);
     if (!game.verified || !input) return;
+    setChecking(true);
     const verify = async () => {
       const u = runtime.manifest.network.uniswapV4;
       const targets = [u.quoter, u.universalRouter, u.permit2, u.poolManager, currencies!.pool.hooks, input.address, output!.address].filter(a => a !== zeroAddress);
@@ -57,9 +59,9 @@ export function Swap() {
       }));
       return metadata;
     };
-    verify().then(() => { if (active) setChecked(true); }).catch(e => { if (active) setCheckingError(errorMessage(e)); });
+    verify().then(() => { if (active) setChecked(true); }).catch(e => { if (active) setCheckingError(errorMessage(e)); }).finally(() => { if (active) setChecking(false); });
     return () => { active = false; };
-  }, [game.verified, runtime]);
+  }, [game.verified, runtime, checkAttempt]);
   useEffect(() => {
     setAllowances(undefined);
     const run = () => { void refreshAllowance().catch(e => { setAllowances(undefined); setError(errorMessage(e)); }); };
@@ -78,7 +80,7 @@ export function Swap() {
     } catch (e) { if (id === requestId.current) setError(errorMessage(e)); } finally { if (id === requestId.current) setQuoting(false); }
   };
   const execute = () => {
-    if (!input || !output || !parsed || !quote || !freshQuote || !currencies || !matchedAllowances) return;
+    if (!checked || !input || !output || !parsed || !quote || !freshQuote || !currencies || !matchedAllowances) return;
     const u = runtime.manifest.network.uniswapV4;
     if (needToken) void tx.send('swap-token-approve', { address: input.address, abi: erc20Abi, functionName: 'approve', args: [u.permit2, parsed] }, refreshAllowance);
     else if (needPermit) void tx.send('swap-permit-approve', { address: u.permit2, abi: permit2Abi, functionName: 'approve', args: [input.address, u.universalRouter, parsed, chainTime + 1800] }, refreshAllowance);
@@ -96,7 +98,11 @@ export function Swap() {
     {!validSlippage && <p className="small error-text">Choose 0.1%–5%, with up to two decimal places.</p>}
     <button className="button" disabled={!parsed || !validSlippage || quoting || !checked || tx.pending} onClick={() => void getQuote()}>{quoting ? 'Getting quote…' : quote ? 'Refresh quote' : 'Get quote'}</button>
     <div aria-live="polite">{quote?.key === quoteKey && <div className="quote-details"><p>Minimum received: <strong>{units(quote.minimum, output?.decimals, 6)} {output?.symbol}</strong></p><p className="small">Rate: 1 {input?.symbol} ≈ {parsed ? Number(formatUnits(quote.output, output?.decimals ?? 18)) / Number(formatUnits(parsed, input?.decimals ?? 18)) : '—'} {output?.symbol}</p><p className={`small ${freshQuote ? 'muted' : 'error-text'}`}>{freshQuote ? `Quote expires in ${Math.max(0, Math.ceil((60000 - now + quote.at) / 1000))}s. Pool fee is included; gas is extra.` : 'Quote expired. Refresh before continuing.'}</p></div>}</div>
-    {(configError || checkingError || error) && <p className="notice error" role="alert">{configError || checkingError || error}</p>}
+    <div className="swap-verification" aria-live="polite">{(checkingError || checking) && <div className={`notice ${checkingError ? 'error' : ''}`}>
+      <p>{checking ? 'Checking swap contracts…' : `Swap contracts could not be verified. ${checkingError}`}</p>
+      <button className="button compact" disabled={checking || !game.verified || tx.pending} onClick={() => { setChecked(false); setCheckingError(''); setChecking(true); setCheckAttempt(attempt => attempt + 1); }}>{checking ? 'Checking swap…' : 'Retry swap check'}</button>
+    </div>}</div>
+    {(configError || error) && <p className="notice error" role="alert">{configError || error}</p>}
     {freshQuote && !native && <ol className="approval-steps"><li className={!needToken ? 'done' : ''}>Approve {input?.symbol} for Permit2</li><li className={!needPermit ? 'done' : ''}>Allow the router to spend through Permit2 · 30 min</li><li>Swap with the minimum output above</li></ol>}
     <Action id={needToken ? 'swap-token-approve' : needPermit ? 'swap-permit-approve' : 'swap'} label={needToken ? `Approve ${input?.symbol ?? 'token'}` : needPermit ? 'Approve router in Permit2' : 'Swap tokens'} disabled={!checked || !parsed || !validSlippage || !freshQuote || insufficient || !matchedAllowances} onClick={execute} primary />
     <TxFeedback ids={['swap-token-approve', 'swap-permit-approve', 'swap']} /><WalletGate />

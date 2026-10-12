@@ -1,0 +1,314 @@
+{
+  "checkedAt": "2026-10-12T17:09:33.067Z",
+  "fixture": "existing MockChain; no real signing",
+  "stage": "accepted export, before revision",
+  "phone": {
+    "scrollY": 0,
+    "width": 390,
+    "height": 844,
+    "boxes": {
+      ".hero": {
+        "x": 16,
+        "y": 136.59375,
+        "width": 358,
+        "height": 876.234375,
+        "top": 136.59375,
+        "right": 374,
+        "bottom": 1012.828125,
+        "left": 16
+      },
+      "#comb": {
+        "x": 16,
+        "y": 1153.828125,
+        "width": 358,
+        "height": 1482.734375,
+        "top": 1153.828125,
+        "right": 374,
+        "bottom": 2636.5625,
+        "left": 16
+      },
+      ".hex-map": {
+        "x": 17,
+        "y": 1285,
+        "width": 356,
+        "height": 306.546875,
+        "top": 1285,
+        "right": 373,
+        "bottom": 1591.546875,
+        "left": 17
+      },
+      "#territory-select": {
+        "x": 29,
+        "y": 1591.546875,
+        "width": 147,
+        "height": 46,
+        "top": 1591.546875,
+        "right": 176,
+        "bottom": 1637.546875,
+        "left": 29
+      },
+      ".territory-panel": {
+        "x": 17,
+        "y": 1716.734375,
+        "width": 356,
+        "height": 869.640625,
+        "top": 1716.734375,
+        "right": 373,
+        "bottom": 2586.375,
+        "left": 17
+      }
+    },
+    "visibleCells": 0
+  },
+  "design": [
+    {
+      "width": 390,
+      "headings": {
+        "#colonies": "Four colonies. Where do you stand?",
+        "#war-log": "The war is written in blocks.",
+        "#how-to-play": "A little strategy. A lasting legacy."
+      },
+      "eyebrows": [
+        {
+          "text": "Ethereum · Onchain strategy",
+          "tracking": "1.92px"
+        },
+        {
+          "text": "Campaign status",
+          "tracking": "1.92px"
+        },
+        {
+          "text": "The battlefield",
+          "tracking": "1.92px"
+        },
+        {
+          "text": "Sector 00",
+          "tracking": "1.92px"
+        },
+        {
+          "text": "Choose your allegiance",
+          "tracking": "1.92px"
+        },
+        {
+          "text": "Colony 01",
+          "tracking": "normal"
+        },
+        {
+          "text": "Colony 02",
+          "tracking": "normal"
+        },
+        {
+          "text": "Colony 03",
+          "tracking": "normal"
+        },
+        {
+          "text": "Colony 04",
+          "tracking": "normal"
+        },
+        {
+          "text": "Your command center",
+          "tracking": "1.92px"
+        },
+        {
+          "text": "Keep your colony supplied",
+          "tracking": "1.92px"
+        },
+        {
+          "text": "From the front lines",
+          "tracking": "1.92px"
+        },
+        {
+          "text": "Glory stays onchain",
+          "tracking": "1.92px"
+        },
+        {
+          "text": "Field manual",
+          "tracking": "1.92px"
+        },
+        {
+          "text": "Verify the contracts · Ethereum",
+          "tracking": "1.92px"
+        }
+      ],
+      "histogram": {
+        "16px": 6,
+        "23.2px": 2,
+        "8px": 2,
+        "12px": 160,
+        "60.8px": 2,
+        "16.8px": 1,
+        "14px": 92,
+        "41.6px": 1,
+        "28px": 6,
+        "12.8px": 16,
+        "10px": 11,
+        "20.8px": 6,
+        "28.8px": 1,
+        "24px": 9,
+        "14.4px": 1,
+        "6.4px": 1,
+        "7.2px": 66,
+        "10.4px": 1,
+        "32px": 9,
+        "19.2px": 4,
+        "30.4px": 4,
+        "29.6px": 2,
+        "33.6px": 1,
+        "18.4px": 1,
+        "40px": 1,
+        "56px": 1,
+        "11.2px": 6
+      },
+      "ogImage": null
+    },
+    {
+      "width": 1440,
+      "headings": {
+        "#colonies": "Four colonies. Where do you stand?",
+        "#war-log": "The war is written in blocks.",
+        "#how-to-play": "A little strategy. A lasting legacy."
+      },
+      "eyebrows": [
+        {
+          "text": "Ethereum · Onchain strategy",
+          "tracking": "1.92px"
+        },
+        {
+          "text": "Campaign status",
+          "tracking": "1.92px"
+        },
+        {
+          "text": "The battlefield",
+          "tracking": "1.92px"
+        },
+        {
+          "text": "Sector 00",
+          "tracking": "1.92px"
+        },
+        {
+          "text": "Choose your allegiance",
+          "tracking": "1.92px"
+        },
+        {
+          "text": "Colony 01",
+          "tracking": "1.92px"
+        },
+        {
+          "text": "Colony 02",
+          "tracking": "1.92px"
+        },
+        {
+          "text": "Colony 03",
+          "tracking": "1.92px"
+        },
+        {
+          "text": "Colony 04",
+          "tracking": "1.92px"
+        },
+        {
+          "text": "Your command center",
+          "tracking": "1.92px"
+        },
+        {
+          "text": "Keep your colony supplied",
+          "tracking": "1.92px"
+        },
+        {
+          "text": "From the front lines",
+          "tracking": "1.92px"
+        },
+        {
+          "text": "Glory stays onchain",
+          "tracking": "1.92px"
+        },
+        {
+          "text": "Field manual",
+          "tracking": "1.92px"
+        },
+        {
+          "text": "Verify the contracts · Ethereum",
+          "tracking": "1.92px"
+        }
+      ],
+      "histogram": {
+        "16px": 6,
+        "26.4px": 2,
+        "9.6px": 2,
+        "14px": 100,
+        "12px": 119,
+        "93.6px": 2,
+        "18px": 1,
+        "41.6px": 1,
+        "32px": 4,
+        "12.8px": 10,
+        "44px": 7,
+        "30.4px": 1,
+        "17.6px": 1,
+        "8.8px": 61,
+        "11.2px": 6,
+        "14.4px": 60,
+        "24px": 12,
+        "28px": 9,
+        "10px": 4,
+        "33.6px": 3,
+        "18.4px": 1,
+        "40px": 1,
+        "20.8px": 2,
+        "56px": 1
+      },
+      "ogImage": null
+    }
+  ],
+  "army": {
+    "width": 320,
+    "scrollWidth": 342,
+    "panel": {
+      "x": 16,
+      "y": 79.9375,
+      "width": 288,
+      "height": 254.296875,
+      "top": 79.9375,
+      "right": 304,
+      "bottom": 334.234375,
+      "left": 16
+    },
+    "amounts": [
+      {
+        "text": "100,000,000.5 NECTAR",
+        "box": {
+          "x": 40,
+          "y": 131.125,
+          "width": 141,
+          "height": 62.421875,
+          "top": 131.125,
+          "right": 181,
+          "bottom": 193.546875,
+          "left": 40
+        },
+        "size": "29.6px"
+      },
+      {
+        "text": "100,000,000.5 NECTAR",
+        "box": {
+          "x": 201,
+          "y": 131.125,
+          "width": 141,
+          "height": 62.421875,
+          "top": 131.125,
+          "right": 342,
+          "bottom": 193.546875,
+          "left": 201
+        },
+        "size": "29.6px"
+      }
+    ]
+  },
+  "swap": {
+    "before": 2,
+    "after": 2,
+    "disabled": true,
+    "retries": 0,
+    "error": "Missing or invalid parameters.\nDouble check you have provided the correct parameters.",
+    "live": true
+  }
+}

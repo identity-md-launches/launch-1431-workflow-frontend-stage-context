@@ -1,0 +1,401 @@
+{
+  "checkedAt": "2026-10-12T17:22:59.218Z",
+  "value": [
+    {
+      "width": 390,
+      "sizes": {
+        "16px": 11,
+        "24px": 26,
+        "12px": 106,
+        "46.8px": 2,
+        "32px": 13,
+        "14px": 83
+      },
+      "labels": [
+        {
+          "text": "Ethereum",
+          "tracking": "normal",
+          "textTransform": "none"
+        },
+        {
+          "text": "Current season",
+          "tracking": "normal",
+          "textTransform": "none"
+        },
+        {
+          "text": "Epoch 8 of 30 ends in",
+          "tracking": "normal",
+          "textTransform": "none"
+        },
+        {
+          "text": "Season standings",
+          "tracking": "normal",
+          "textTransform": "none"
+        },
+        {
+          "text": "Points",
+          "tracking": "normal",
+          "textTransform": "none"
+        },
+        {
+          "text": "Territories held",
+          "tracking": "normal",
+          "textTransform": "none"
+        },
+        {
+          "text": "Sector 00",
+          "tracking": "normal",
+          "textTransform": "none"
+        },
+        {
+          "text": "Colony 01",
+          "tracking": "normal",
+          "textTransform": "none"
+        },
+        {
+          "text": "Colony 02",
+          "tracking": "normal",
+          "textTransform": "none"
+        },
+        {
+          "text": "Colony 03",
+          "tracking": "normal",
+          "textTransform": "none"
+        },
+        {
+          "text": "Colony 04",
+          "tracking": "normal",
+          "textTransform": "none"
+        },
+        {
+          "text": "Active troops",
+          "tracking": "normal",
+          "textTransform": "none"
+        },
+        {
+          "text": "Pending next epoch",
+          "tracking": "normal",
+          "textTransform": "none"
+        },
+        {
+          "text": "Estimated receive",
+          "tracking": "normal",
+          "textTransform": "none"
+        },
+        {
+          "text": "Verify the contracts · Ethereum",
+          "tracking": "normal",
+          "textTransform": "none"
+        }
+      ],
+      "headings": [
+        {
+          "tag": "H2",
+          "size": "32px"
+        },
+        {
+          "tag": "H3",
+          "size": "24px"
+        },
+        {
+          "tag": "H2",
+          "size": "32px"
+        },
+        {
+          "tag": "H3",
+          "size": "24px"
+        },
+        {
+          "tag": "H3",
+          "size": "24px"
+        },
+        {
+          "tag": "H3",
+          "size": "24px"
+        },
+        {
+          "tag": "H3",
+          "size": "24px"
+        },
+        {
+          "tag": "H2",
+          "size": "32px"
+        },
+        {
+          "tag": "H3",
+          "size": "24px"
+        },
+        {
+          "tag": "H3",
+          "size": "24px"
+        },
+        {
+          "tag": "H3",
+          "size": "24px"
+        },
+        {
+          "tag": "H2",
+          "size": "32px"
+        },
+        {
+          "tag": "H3",
+          "size": "24px"
+        },
+        {
+          "tag": "H3",
+          "size": "24px"
+        },
+        {
+          "tag": "H2",
+          "size": "32px"
+        },
+        {
+          "tag": "H3",
+          "size": "24px"
+        },
+        {
+          "tag": "H3",
+          "size": "24px"
+        },
+        {
+          "tag": "H2",
+          "size": "32px"
+        },
+        {
+          "tag": "H3",
+          "size": "24px"
+        },
+        {
+          "tag": "H3",
+          "size": "24px"
+        },
+        {
+          "tag": "H2",
+          "size": "32px"
+        },
+        {
+          "tag": "H3",
+          "size": "24px"
+        },
+        {
+          "tag": "H3",
+          "size": "24px"
+        },
+        {
+          "tag": "H3",
+          "size": "24px"
+        },
+        {
+          "tag": "H3",
+          "size": "24px"
+        },
+        {
+          "tag": "H3",
+          "size": "24px"
+        },
+        {
+          "tag": "H2",
+          "size": "32px"
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "sizes": {
+        "16px": 8,
+        "24px": 28,
+        "12px": 109,
+        "14px": 101,
+        "93.6px": 2,
+        "32px": 15
+      },
+      "labels": [
+        {
+          "text": "Ethereum",
+          "tracking": "normal",
+          "textTransform": "none"
+        },
+        {
+          "text": "Current season",
+          "tracking": "normal",
+          "textTransform": "none"
+        },
+        {
+          "text": "Epoch 8 of 30 ends in",
+          "tracking": "normal",
+          "textTransform": "none"
+        },
+        {
+          "text": "Season standings",
+          "tracking": "normal",
+          "textTransform": "none"
+        },
+        {
+          "text": "Points",
+          "tracking": "normal",
+          "textTransform": "none"
+        },
+        {
+          "text": "Territories held",
+          "tracking": "normal",
+          "textTransform": "none"
+        },
+        {
+          "text": "Sector 00",
+          "tracking": "normal",
+          "textTransform": "none"
+        },
+        {
+          "text": "Colony 01",
+          "tracking": "normal",
+          "textTransform": "none"
+        },
+        {
+          "text": "Colony 02",
+          "tracking": "normal",
+          "textTransform": "none"
+        },
+        {
+          "text": "Colony 03",
+          "tracking": "normal",
+          "textTransform": "none"
+        },
+        {
+          "text": "Colony 04",
+          "tracking": "normal",
+          "textTransform": "none"
+        },
+        {
+          "text": "Active troops",
+          "tracking": "normal",
+          "textTransform": "none"
+        },
+        {
+          "text": "Pending next epoch",
+          "tracking": "normal",
+          "textTransform": "none"
+        },
+        {
+          "text": "Estimated receive",
+          "tracking": "normal",
+          "textTransform": "none"
+        },
+        {
+          "text": "Verify the contracts · Ethereum",
+          "tracking": "normal",
+          "textTransform": "none"
+        }
+      ],
+      "headings": [
+        {
+          "tag": "H2",
+          "size": "32px"
+        },
+        {
+          "tag": "H3",
+          "size": "24px"
+        },
+        {
+          "tag": "H2",
+          "size": "32px"
+        },
+        {
+          "tag": "H3",
+          "size": "24px"
+        },
+        {
+          "tag": "H3",
+          "size": "24px"
+        },
+        {
+          "tag": "H3",
+          "size": "24px"
+        },
+        {
+          "tag": "H3",
+          "size": "24px"
+        },
+        {
+          "tag": "H2",
+          "size": "32px"
+        },
+        {
+          "tag": "H3",
+          "size": "24px"
+        },
+        {
+          "tag": "H3",
+          "size": "24px"
+        },
+        {
+          "tag": "H3",
+          "size": "24px"
+        },
+        {
+          "tag": "H2",
+          "size": "32px"
+        },
+        {
+          "tag": "H3",
+          "size": "24px"
+        },
+        {
+          "tag": "H3",
+          "size": "24px"
+        },
+        {
+          "tag": "H2",
+          "size": "32px"
+        },
+        {
+          "tag": "H3",
+          "size": "24px"
+        },
+        {
+          "tag": "H3",
+          "size": "24px"
+        },
+        {
+          "tag": "H2",
+          "size": "32px"
+        },
+        {
+          "tag": "H3",
+          "size": "24px"
+        },
+        {
+          "tag": "H3",
+          "size": "24px"
+        },
+        {
+          "tag": "H2",
+          "size": "32px"
+        },
+        {
+          "tag": "H3",
+          "size": "24px"
+        },
+        {
+          "tag": "H3",
+          "size": "24px"
+        },
+        {
+          "tag": "H3",
+          "size": "24px"
+        },
+        {
+          "tag": "H3",
+          "size": "24px"
+        },
+        {
+          "tag": "H3",
+          "size": "24px"
+        },
+        {
+          "tag": "H2",
+          "size": "32px"
+        }
+      ]
+    }
+  ]
+}
