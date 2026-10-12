@@ -1,0 +1,72 @@
+{
+  "chainId": 1,
+  "poolKey": {
+    "fee": 12500,
+    "hooks": "0x784ff9a3ac5d88a30bfff6f7f2a270161fbe6000",
+    "currency0": "0x462bc29829dce787e3c8b32f5c032a49234f0e2b",
+    "currency1": "0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7",
+    "tickSpacing": 60
+  },
+  "repoUrl": "https://github.com/identity-md-launches/launch-1422-workflow-contract-stage-context",
+  "version": 1,
+  "launchId": "3bb8bb59-46cc-4391-98f8-e654766150e0",
+  "manifest": {
+    "kind": "evm_project",
+    "pool": {
+      "fee": 12500,
+      "tickSpacing": 60,
+      "initialPrice": "79228162514264337593543950336",
+      "pairedCurrency": "0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7"
+    },
+    "notes": "HiveWars immutably binds NECTAR in its constructor and escrows tokens deposited by players for a 61-territory game with 24-hour epochs and 30-epoch seasons. ConquerorBadge immutably references HiveWars and mints one fully onchain, soulbound badge per eligible wallet per finalized season. Neither application contract has an owner or admin role. No initialization calls are required.",
+    "token": {
+      "name": "Nectar",
+      "symbol": "NECTAR",
+      "contract": "LaunchToken",
+      "decimals": 18
+    },
+    "contracts": [
+      {
+        "contract": "HiveWars",
+        "constructorArgs": [
+          "$token"
+        ]
+      },
+      {
+        "contract": "ConquerorBadge",
+        "constructorArgs": [
+          "$contract:HiveWars"
+        ]
+      }
+    ]
+  },
+  "contracts": [
+    {
+      "name": "LaunchToken",
+      "txHash": "0xa674033de4e9d955ba082527c25de7c8b7f16da5a8a7557bd319f860d2e8fb20",
+      "abiHash": "38880b8e56d42ce900f744a7908c7139632a49f1c3f33385c64ceaed29d37bee",
+      "address": "0x462bc29829dce787e3c8b32f5c032a49234f0e2b",
+      "blockNumber": 26177027,
+      "creationCodeHash": "2cf4347d6f22f545a06fdaaf5dac643c8e6323f80553d6293dfd6f2da420967e"
+    },
+    {
+      "name": "HiveWars",
+      "txHash": "0xa674033de4e9d955ba082527c25de7c8b7f16da5a8a7557bd319f860d2e8fb20",
+      "abiHash": "794ecd846e779543b9e1de96df9ac51bb9e058e29168b5091da6487697c3d7f8",
+      "address": "0xa7b90c8ec172fdbb03f885ab9d21a4e26d8db590",
+      "blockNumber": 26177027,
+      "creationCodeHash": "2b58a1d4ea4468b2be98f328ce3c3891b3e65579b1342e8cfc2bdfe3daa8000e"
+    },
+    {
+      "name": "ConquerorBadge",
+      "txHash": "0xa674033de4e9d955ba082527c25de7c8b7f16da5a8a7557bd319f860d2e8fb20",
+      "abiHash": "cd015743cace0be5d27a15be82e4f2c585ed143a056d8d36eca1fcb65a721232",
+      "address": "0x800504f0d471fa3647c2414167e55ca06df16ab6",
+      "blockNumber": 26177027,
+      "creationCodeHash": "1a478e3ff01e5813c539be439352c7f9c2fd2435ac6efcbd7d1bc4a124987aea"
+    }
+  ],
+  "sourceCommit": "7b6b0732dae14e6324661c2ef4f5640340a3854c",
+  "abiInstructions": "Build ABIs from this exact source commit; compare canonicalKeccak(abi) with abiHash. Verify deployed code on the stated chain before enabling transactions.",
+  "attestationHash": "59f0b2ad96d85acf93ed816e93223d61747fc5951c705bbc5ea102cec2c108e2"
+}

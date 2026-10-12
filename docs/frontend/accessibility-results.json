@@ -1,0 +1,142 @@
+{
+  "checkedAt": "2026-10-12T16:25:32.013Z",
+  "fixture": "mocked chain, connected wallet",
+  "violations": [],
+  "incomplete": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+      "nodeCount": 124,
+      "examples": [
+        {
+          "target": [
+            ".crosshair"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+        },
+        {
+          "target": [
+            ".core > .hex-mark"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+        },
+        {
+          "target": [
+            ".hex:nth-child(4) > .hex-id"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+        },
+        {
+          "target": [
+            ".hex:nth-child(4) > .hex-mark"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
+        }
+      ]
+    }
+  ],
+  "passes": 33,
+  "renders": [
+    {
+      "width": 1440,
+      "height": 1000,
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "height": 800,
+      "overflow": false
+    }
+  ],
+  "computed": {
+    "fonts": [
+      {
+        "font": "Barlow Condensed",
+        "loaded": true
+      },
+      {
+        "font": "IBM Plex Mono",
+        "loaded": true
+      }
+    ],
+    "contrast": [
+      {
+        "selector": ".hero-story",
+        "foreground": "rgb(242, 241, 230)",
+        "background": "rgb(16, 18, 15)",
+        "ratio": 16.59
+      },
+      {
+        "selector": ".hero-description",
+        "foreground": "rgb(182, 188, 174)",
+        "background": "rgb(16, 18, 15)",
+        "ratio": 9.68
+      },
+      {
+        "selector": ".season-panel .eyebrow",
+        "foreground": "rgb(182, 188, 174)",
+        "background": "rgb(23, 27, 21)",
+        "ratio": 8.96
+      },
+      {
+        "selector": ".hero-actions .primary",
+        "foreground": "rgb(23, 22, 12)",
+        "background": "rgb(245, 165, 36)",
+        "ratio": 8.9
+      },
+      {
+        "selector": ".hex.selected .hex-id",
+        "foreground": "rgb(242, 241, 230)",
+        "background": "color(srgb 0.246902 0.203294 0.0929412)",
+        "ratio": 10.78
+      },
+      {
+        "selector": ".hex[aria-label=\"The Core, 5 points, Crimson, contested\"] .hex-id",
+        "foreground": "rgb(245, 165, 36)",
+        "background": "color(srgb 0.195216 0.128824 0.110902)",
+        "ratio": 7.51
+      },
+      {
+        "selector": ".hex[aria-label=\"Territory 01, 3 points, Obsidian\"] .hex-id",
+        "foreground": "rgb(242, 241, 230)",
+        "background": "color(srgb 0.149333 0.16298 0.156784)",
+        "ratio": 12.81
+      },
+      {
+        "selector": ".hex[aria-label=\"Territory 02, 3 points, Jade\"] .hex-id",
+        "foreground": "rgb(242, 241, 230)",
+        "background": "color(srgb 0.100392 0.184902 0.130275)",
+        "ratio": 12.56
+      },
+      {
+        "selector": ".hex[aria-label=\"Territory 04, 3 points, Neutral\"] .hex-id",
+        "foreground": "rgb(242, 241, 230)",
+        "background": "color(srgb 0.136588 0.153804 0.124157)",
+        "ratio": 13.38
+      },
+      {
+        "selector": ".hex[aria-label=\"Territory 05, 3 points, Neutral\"] .hex-id",
+        "foreground": "rgb(242, 241, 230)",
+        "background": "color(srgb 0.136588 0.153804 0.124157)",
+        "ratio": 13.38
+      },
+      {
+        "selector": ".hex[aria-label=\"Territory 06, 3 points, Neutral\"] .hex-id",
+        "foreground": "rgb(242, 241, 230)",
+        "background": "color(srgb 0.136588 0.153804 0.124157)",
+        "ratio": 13.38
+      }
+    ]
+  }
+}

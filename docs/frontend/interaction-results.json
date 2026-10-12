@@ -1,0 +1,146 @@
+{
+  "profile": "Chromium 141 / Playwright 1.56.1",
+  "exportBase": "/preview/",
+  "stats": {
+    "startTime": "2026-10-12T16:25:07.675Z",
+    "duration": 33018.611,
+    "expected": 12,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "title": "static subpath, missing wallet, disconnected actions and deployment failure",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 748,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "wrong network adds unknown chain and switches, with one recovery action",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 698,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "wallet rejection is recoverable, joining locks the colony through receipt",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2331,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "deploy approval, deploy, move, retreat and mature claim use real ABI calldata",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 5886,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "simulation revert blocks wallet signing and invalid values cannot be sent",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1684,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "buy quote, both explicit approvals and router swap preserve pool key and no ETH value",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 3866,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "settle, real event decoding, keeper ranking and badge claim/metadata",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2202,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "manifest ABI tampering and empty deployed code fail closed",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 520,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "responsive render, accessibility, keyboard map and reduced motion",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 5016,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "RPC fallback, account/network changes and expired quotes disable unsafe actions",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 4609,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "live public RPC reads render deployed state without a wallet",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1231,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "router nested revert is explained before signing; direct NECTAR transfer validates recipient",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 2678,
+          "errors": []
+        }
+      ]
+    }
+  ]
+}

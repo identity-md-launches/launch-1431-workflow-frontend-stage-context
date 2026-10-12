@@ -1,0 +1,114 @@
+{
+  "checkedAt": "2026-10-12T16:09:51.744Z",
+  "kind": "read-only RPC verification",
+  "attempts": [
+    {
+      "url": "https://ethereum-rpc.publicnode.com",
+      "ok": true
+    }
+  ],
+  "result": {
+    "chainId": 1,
+    "block": "26177495",
+    "contracts": [
+      {
+        "name": "LaunchToken",
+        "address": "0x462bc29829dce787e3c8b32f5c032a49234f0e2b",
+        "codeBytes": 1722,
+        "codeKeccak256": "0x01fb92b21a7414fcac4480618142f8968a5d2bae8071370fb5e9369b97fc55bc"
+      },
+      {
+        "name": "HiveWars",
+        "address": "0xa7b90c8ec172fdbb03f885ab9d21a4e26d8db590",
+        "codeBytes": 12660,
+        "codeKeccak256": "0x40ebc126886a0fdc3279cf65dbc181608d92e51efead96b51b6e8e0267c608a4"
+      },
+      {
+        "name": "ConquerorBadge",
+        "address": "0x800504f0d471fa3647c2414167e55ca06df16ab6",
+        "codeBytes": 8191,
+        "codeKeccak256": "0x186d053da07fe71e470cc5d632ffef7ed61582b73bdf713707b78bac3c3c1c9f"
+      }
+    ],
+    "nectarToken": "0x462bC29829dCe787E3C8b32f5C032a49234F0E2b",
+    "hiveWars": "0xA7B90c8eC172FDBB03f885AB9d21A4E26d8dB590",
+    "decimals": 18,
+    "symbol": "NECTAR",
+    "season": {
+      "season": "1",
+      "epoch": "1",
+      "epochInSeason": "1",
+      "secondsLeft": "80772",
+      "seasonSecondsLeft": "2586372",
+      "lastSettled": "0",
+      "pastWinners": []
+    },
+    "territories": 61,
+    "colonies": {
+      "members": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "active": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "score": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    "protocolCode": [
+      {
+        "name": "poolManager",
+        "address": "0x000000000004444c5dc75cb358380d2e3de08a90",
+        "codeBytes": 24009
+      },
+      {
+        "name": "universalRouter",
+        "address": "0x66a9893cc07d91d95644aedd05d03f95e1dba8af",
+        "codeBytes": 19499
+      },
+      {
+        "name": "quoter",
+        "address": "0x52f0e24d1c21c8a0cb1e5a5dd6198556bd9e1203",
+        "codeBytes": 5820
+      },
+      {
+        "name": "stateView",
+        "address": "0x7ffe42c4a5deea5b0fec41c94c136cf115597227",
+        "codeBytes": 3531
+      },
+      {
+        "name": "positionManager",
+        "address": "0xbd216513d74c8cf14cf4747e6aaa6420ff64ee9e",
+        "codeBytes": 23877
+      },
+      {
+        "name": "permit2",
+        "address": "0x000000000022d473030f116ddee9f6b43ac78ba3",
+        "codeBytes": 9152
+      }
+    ],
+    "quotes": [
+      {
+        "direction": "IMD to NECTAR",
+        "inputBaseUnits": "1000000000000000000",
+        "outputBaseUnits": "392327414871943989010769",
+        "ok": true
+      },
+      {
+        "direction": "NECTAR to IMD",
+        "inputBaseUnits": "1000000000000000000",
+        "outputBaseUnits": "2484459044472",
+        "ok": true
+      }
+    ]
+  }
+}

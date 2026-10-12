@@ -1,0 +1,34 @@
+{
+  "name": "hive-wars-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "overrides": { "playwright-core": "1.56.1" },
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "typecheck": "tsc --noEmit",
+    "build": "npm run typecheck && node scripts/licenses.mjs && vite build && node scripts/export-manifest.mjs",
+    "preview": "vite preview --host 0.0.0.0",
+    "verify": "node scripts/export-manifest.mjs --check",
+    "test": "node --import tsx --test tests/logic.test.ts",
+    "test:browser": "playwright test"
+  },
+  "dependencies": {
+    "@fontsource/barlow-condensed": "5.2.8",
+    "@fontsource/ibm-plex-mono": "5.2.7",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "viem": "2.38.5"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.11.0",
+    "@playwright/test": "1.56.1",
+    "@types/node": "24.10.0",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "@vitejs/plugin-react": "5.1.0",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3",
+    "vite": "7.2.2"
+  }
+}
